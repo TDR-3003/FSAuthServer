@@ -1,0 +1,50 @@
+DirectoryIndex index.php
+Options +FollowSymlinks
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ https://cloud81.hostgator.com/404.html [L]
+RewriteCond %{HTTP_REFERER} !^http://fikhsons.com/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://fikhsons.com$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.fikhsons.com/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.fikhsons.com$ [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp|psd|mp3|mp4|wav|zip)$ https://cloud81.hostgator.com/404.html [R,NC]
+<Files ~ "^.*\. ([Hh][Tt][Aa])">
+	Order Allow,Deny
+	Deny from All
+	Satisfy All
+</Files>
+<Files "config.php">
+	Order Allow,Deny
+	Deny from All
+</Files>
+<Files "connection.php">
+	Order Allow,Deny
+	Deny from All
+</Files>
+<Files "server.php">
+	Order Allow,Deny
+	Deny from All
+</Files>
+<Files "query.php">
+	Order Allow,Deny
+	Deny from All
+</Files>
+<Files "header.php">
+	Order Allow,Deny
+	Deny from All
+</Files>
+<Files "home.php">
+	Order Allow,Deny
+	Deny from All
+</Files>
+<Files "footer.php">
+	Order Allow,Deny
+	Deny from All
+</Files>
+<Files "phpinfo.php">
+	Allow from All
+</Files>
